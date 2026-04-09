@@ -7,80 +7,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-}
-
-.btn-primary {
-  background-color: rgb(85, 121, 194);
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: rgb(85, 121, 194);
-  opacity: 0.8;
-}
-
-/* section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:100vh;
-}
-
-div{
-    background-color: rgb(255, 105, 105);
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-}
- */
-header {
-  background-color: beige;
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-  padding: 10px 30px;
-  box-shadow: 0 10px 20px rgba(128, 128, 128, 0.383);
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  color: rgb(85, 121, 194);
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-header nav ul .lista {
-  position: relative;
-}
-
-header nav ul .lista .submenu {
-  display: none;
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  padding: 10px;
-  width: 180px;
-  background-color: rgba(245, 245, 220, 0.837);
-}
-
-header nav ul li:hover .submenu {
-  display: block;
-}
-
-header nav ul .lista .submenu li {
-  margin-bottom: 5px;
-}
-
-header #menu-hamburguesa {
-  display: none;
+  background: linear-gradient(135deg, #282848, #252541);
 }
 
 html, body {
@@ -92,21 +19,75 @@ body {
   flex-direction: column;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+
+header {
+  background-color: rgba(37, 6, 66, 0.179);
+  padding: 10px 30px;
+  box-shadow: 0 10px 20px rgba(128, 128, 128, 0.383);
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  column-gap: 10px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: rgb(85, 121, 194);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+header nav ul li:hover .submenu {
+  display: block;
+}
+header nav ul .lista {
+  position: relative;
+}
+header nav ul .lista .submenu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  padding: 10px;
+  width: 180px;
+  background-color: rgba(245, 245, 220, 0.837);
+}
+header nav ul .lista .submenu li {
+  margin-bottom: 5px;
+}
+header #menu-hamburguesa {
+  display: none;
+}
+
 main {
   flex: 1;
+}
+
+main {
+  flex: 1;
+  padding: 30px 0;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px;
 }
 
 .grilla img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.card img {
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .grilla {
@@ -142,14 +123,67 @@ main {
   grid-area: area6;
 }
 
-footer {
-  background-color: black;
+.sidebar {
+  width: 200px;
+  background-color: #222;
   color: white;
-  padding: 10px;
+  padding: 15px;
+  justify-items: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(227, 222, 222, 0.3);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-/*Hasta = max-width*/
-/*Tablet 768px a 991px*/
+@media (max-width: 991px) {
+  .sidebar {
+    padding: 10px;
+    justify-self: center;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    max-width: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(227, 222, 222, 0.3);
+  }
+}
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.btn-primary {
+  background-color: rgb(85, 121, 194);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: rgb(85, 121, 194);
+  opacity: 0.8;
+}
+
+#animaciones .caja {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 20px;
+}
+
 @media (max-width: 991px) {
   header #menu-hamburguesa {
     display: block;
@@ -157,63 +191,26 @@ footer {
   header nav {
     display: none;
   }
-  .grilla {
-    grid-template-columns: 250px 250px;
-    grid-template-rows: repeat(3, 200px);
-    grid-template-areas: "area1 area2" "area3 area4" "area5 area6";
-  }
-  main {
-    flex: 1;
-    padding: 30px 0;
-  }
-}
-/*Celular 320px a 480px*/
-@media (max-width: 480px) {
-  .grilla {
-    grid-template-columns: 250px;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: "area1" "area2" "area3" "area4" "area5" "area6";
-  }
-}
-.layout {
-  display: flex;
-  gap: 20px;
-}
-
-.sidebar {
-  width: 200px;
-  background-color: #222;
-  color: white;
-  padding: 15px;
-  justify-items: center;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-@media (max-width: 991px) {
   .layout {
     flex-direction: column;
   }
-  .sidebar {
-    width: 100%;
+}
+@media (max-width: 780px) {
+  .grilla {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas: "area1 area2" "area3 area4" "area5 area6";
   }
 }
 @media (max-width: 480px) {
+  .grilla {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+    grid-template-areas: "area1" "area2" "area3" "area4" "area5" "area6";
+  }
   .card img {
     height: 150px;
   }
 }
-/*Desde = min-width*/
-/*Mobil first*/
-/*Tablet
-@media (min-width: 576px){
 
-}
-
-/*Desktop
-@media (min-width: 992px){
-
-}*//*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
