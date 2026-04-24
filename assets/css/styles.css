@@ -150,21 +150,12 @@ footer {
   }
 }
 .card {
-  transition: all 0.3s ease;
-  border-radius: 12px;
-  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
 }
 .card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-}
-
-.card-img-top {
-  transition: transform 0.3s ease;
-}
-
-.card:hover .card-img-top {
-  transform: scale(1.1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn-primary {
@@ -177,6 +168,124 @@ footer {
   opacity: 0.8;
 }
 
+.productos {
+  padding: 20px 20px 20px 20px;
+}
+.productos .grid-productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.productos .card-producto {
+  background: #1f1f2e;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.productos .card-producto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+.productos .card-producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.productos .card-producto .card-content {
+  padding: 20px;
+}
+.productos .card-producto .card-content h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.productos .card-producto .card-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+.productos .card-producto .card-content .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #4e73df;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.contacto {
+  padding: 80px 0;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #1f1f2e;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* IZQUIERDA */
+.contact-info {
+  padding: 40px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.contact-info p {
+  margin-bottom: 25px;
+  color: #e0e7ff;
+}
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+.contact-info ul li {
+  margin-bottom: 10px;
+}
+
+/* DERECHA */
+.contact-form {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+}
+.contact-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a3d;
+  color: #fff;
+}
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-form button:hover {
+  background: #6366f1;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+}
 #animaciones .caja {
   width: 100px;
   height: 100px;
