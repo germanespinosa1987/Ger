@@ -1,3 +1,5 @@
+@use 'cards' as *;
+
 .productos {
     padding: 20px 20px 20px 20px;
 
@@ -8,15 +10,9 @@
     }
 
     .card-producto {
-        background: #1f1f2e;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-
-        &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
+        @extend .card-base;
+        
+        
 
         img {
             width: 100%;

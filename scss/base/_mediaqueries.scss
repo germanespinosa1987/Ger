@@ -2,9 +2,11 @@
     header #menu-hamburguesa {
         display: block;
     }
+
     header nav {
         display: none;
     }
+
     .layout {
         flex-direction: column;
     }
@@ -33,7 +35,20 @@
             "area5"
             "area6";
     }
+
     .card img {
         height: 150px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .aplicaciones .grid-aplicaciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .aplicaciones .grid-aplicaciones {
+        grid-template-columns: 1fr;
     }
 }
