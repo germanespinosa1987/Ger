@@ -1,7 +1,10 @@
-header {
-    background-color: rgba(37, 6, 66, 0.179);
+@use '../base/variables' as var;
+
+.mi-header {
+    background: var.$secondaryColor !important;
     padding: 10px 30px;
     box-shadow: 0 10px 20px rgba(128, 128, 128, 0.383);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 
     nav {
         ul {
